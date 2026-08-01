@@ -12,7 +12,7 @@
 
 <div class="min-h-screen flex flex-col">
   <Navbar />
-  <main class="flex-1">
+  <main class="flex-1 m-5">
     {@render children()}
   </main>
   <Footer />
