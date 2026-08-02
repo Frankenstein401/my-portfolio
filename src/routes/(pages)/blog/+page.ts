@@ -1,7 +1,7 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {
-    const modules = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+    const modules = import.meta.glob('$lib/posts/*.md', { eager: true });
 
     const posts = [];
 
@@ -15,6 +15,7 @@ export const load: PageLoad = async () => {
                 title: file.metadata.title,
                 description: file.metadata.description,
                 date: file.metadata.date,
+                lang: file.metadata.lang || 'ID',
                 published: file.metadata.published
             });
         }
