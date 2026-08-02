@@ -10,6 +10,8 @@
   let { children } = $props();
 
   const isAdmin = $derived(page.url.pathname.startsWith("/admin"));
+  const isError = $derived(page.status >= 400);
+  const hideLayout = $derived(isAdmin || isError);
 </script>
 
 <svelte:head>
@@ -24,13 +26,13 @@
 
 <div class="min-h-screen flex flex-col">
   <DynamicGridBg />
-  {#if !isAdmin}
+  {#if !hideLayout}
     <Navbar />
   {/if}
-  <main class="flex-1">
+  <main class="flex-1 flex flex-col justify-center">
     {@render children()}
   </main>
-  {#if !isAdmin}
+  {#if !hideLayout}
     <Footer />
   {/if}
 </div>
