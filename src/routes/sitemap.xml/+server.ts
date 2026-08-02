@@ -2,9 +2,9 @@ import type { RequestHandler } from "./$types";
 
 export const prerender = true;
 
-export const GET: RequestHandler = async ({ url }) => {
-  const domain = url.origin;
+const SITE_URL = "https://www.abdulganihadiansyah.my.id";
 
+export const GET: RequestHandler = async () => {
   const pages = [
     "",
     "/about",
@@ -21,7 +21,7 @@ export const GET: RequestHandler = async ({ url }) => {
     .map(
       (page) => `
   <url>
-    <loc>${domain}${page}</loc>
+    <loc>${SITE_URL}${page}</loc>
     <changefreq>weekly</changefreq>
     <priority>${page === "" || page === "/about" ? "1.0" : "0.8"}</priority>
   </url>`
