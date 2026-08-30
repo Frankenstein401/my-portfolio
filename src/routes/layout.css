@@ -2,8 +2,44 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ============================================================
+   IBM Carbon Design System — remap palet Tailwind
+   (token diambil dari ibm.com/id-id via camofox scrape)
+   ============================================================ */
 @theme {
-  --font-mono: "JetBrains Mono Variable", monospace;
+  /* Font */
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono Variable", monospace;
+
+  /* Grayscale Carbon (remap zinc) */
+  --color-zinc-50: #f4f4f4;
+  --color-zinc-100: #f4f4f4;
+  --color-zinc-200: #e0e0e0;
+  --color-zinc-300: #c6c6c6;
+  --color-zinc-400: #a8a8a8;
+  --color-zinc-500: #8d8d8d;
+  --color-zinc-600: #6f6f6f;
+  --color-zinc-700: #525252;
+  --color-zinc-800: #393939;
+  --color-zinc-900: #262626;
+  --color-zinc-950: #161616;
+
+  /* Blue Carbon (remap blue) */
+  --color-blue-50: #edf5ff;
+  --color-blue-100: #d0e2ff;
+  --color-blue-200: #a6c8ff;
+  --color-blue-300: #78a9ff;
+  --color-blue-400: #4589ff;
+  --color-blue-500: #0f62fe;
+  --color-blue-600: #0050e6;
+  --color-blue-700: #0043ce;
+  --color-blue-800: #002d9c;
+  --color-blue-900: #001d6c;
+  --color-blue-950: #001141;
+
+  /* Purple Carbon (aksen CTA) */
+  --color-purple-10: #e9e9ff;
+  --color-purple-70: #763cad;
 }
 
 html {
@@ -12,47 +48,82 @@ html {
 }
 
 body {
-  @apply bg-white text-zinc-900 transition-colors duration-200;
-  font-family: var(--font-mono);
+  @apply bg-white text-zinc-950 transition-colors duration-200;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Link standar ala IBM: biru dengan hover lebih pekat */
+a {
+  @apply text-blue-500 hover:text-blue-600 transition-colors;
 }
 
 .dark body {
   @apply bg-zinc-950 text-zinc-100;
 }
 
-/* Custom Scrollbar Styles (WebKit & Firefox) */
+/* ============ Komponen IBM (dipakai lintas halaman) ============ */
+
+/* Tombol Carbon: sudut tajam, tinggi 48px */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 min-h-12 px-4 text-sm border transition-colors select-none whitespace-nowrap;
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  @apply bg-blue-500 text-white border-blue-500 hover:bg-blue-600 active:bg-blue-800;
+}
+.btn-secondary {
+  @apply bg-zinc-900 text-white border-zinc-900 hover:bg-zinc-800 active:bg-zinc-700;
+}
+.btn-tertiary {
+  @apply bg-transparent text-blue-500 border-blue-500 hover:bg-blue-100 active:bg-blue-200;
+}
+.btn-arrow {
+  padding-right: 3.9375rem;
+}
+
+/* Eyebrow / label mono uppercase ala IBM */
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.08em] text-zinc-700 dark:text-zinc-300;
+}
+
+/* Kartu IBM: flat, border tipis, hover border biru */
+.ibm-card {
+  @apply bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700
+    transition-colors duration-150 hover:border-blue-500;
+}
+
+/* Link teks dengan panah */
+.ibm-link {
+  @apply inline-flex items-center gap-1.5 text-blue-500 hover:text-blue-600 text-sm;
+}
+
+/* Scrollbar (WebKit & Firefox) */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
   background: rgba(161, 161, 170, 0.35);
-  border-radius: 9999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(161, 161, 170, 0.6);
 }
-
 .dark ::-webkit-scrollbar-thumb {
   background: rgba(63, 63, 70, 0.5);
 }
-
 .dark ::-webkit-scrollbar-thumb:hover {
   background: rgba(113, 113, 122, 0.8);
 }
-
-/* Firefox Scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(161, 161, 170, 0.35) transparent;
 }
-
 .dark * {
   scrollbar-color: rgba(63, 63, 70, 0.5) transparent;
 }

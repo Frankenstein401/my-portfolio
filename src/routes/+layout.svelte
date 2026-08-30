@@ -3,7 +3,6 @@
   import favicon from "$lib/assets/favicon.svg";
   import { page } from "$app/state";
 
-  import DynamicGridBg from "$lib/components/DynamicGridBg.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
 
@@ -25,11 +24,10 @@
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">
-  <DynamicGridBg />
   {#if !hideLayout}
     <Navbar />
   {/if}
-  <main class="flex-1 flex flex-col justify-center">
+  <main class="flex-1 flex flex-col">
     {@render children()}
   </main>
   {#if !hideLayout}

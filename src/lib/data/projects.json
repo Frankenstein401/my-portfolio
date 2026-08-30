@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "id": "berita-kita",
+    "title": "Berita Kita",
+    "description": "Aplikasi berita mobile lintas platform dengan React Native + Expo SDK 57, arsitektur modular dan UI modern.",
+    "tags": ["React Native", "Expo", "TypeScript"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "red",
+    "agency": "Proyek Pribadi",
+    "year": "2026"
+  },
+  {
+    "id": "pintar-menabung-api",
+    "title": "Pintar Menabung API",
+    "description": "REST API pengelola keuangan pribadi: catat transaksi, dompet, target menabung, dan rekap otomatis.",
+    "tags": ["Bun", "ElysiaJS", "SQLite"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "yellow",
+    "agency": "Proyek Pribadi",
+    "year": "2026"
+  },
+  {
+    "id": "web-builder",
+    "title": "Web Builder",
+    "description": "Platform builder halaman web drag-and-drop: frontend React + backend NestJS dengan API REST.",
+    "tags": ["React", "NestJS", "PostgreSQL"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "light",
+    "agency": "Proyek Pribadi",
+    "year": "2026"
+  },
+  {
+    "id": "website-3d",
+    "title": "Website 3D",
+    "description": "Eksperimen situs interaktif dengan rendering 3D dan animasi halus di browser.",
+    "tags": ["Three.js", "WebGL", "Vite"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "dark",
+    "agency": "Eksperimen",
+    "year": "2025"
+  },
+  {
+    "id": "notes-app",
+    "title": "Notes App",
+    "description": "Aplikasi catatan full-stack: REST API Hapi + frontend web. Submission kelas Dicoding.",
+    "tags": ["Node.js", "Hapi", "JavaScript"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "yellow",
+    "agency": "Dicoding",
+    "year": "2025"
+  },
+  {
+    "id": "pomodoro-app",
+    "title": "Pomodoro Timer",
+    "description": "Aplikasi timer Pomodoro mandiri dengan kustomisasi sesi, suara otomatis, dan UI gelap modern.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "red",
+    "agency": "Proyek Pribadi",
+    "year": "2025"
+  },
+  {
+    "id": "futuristic-learn",
+    "title": "Futuristic Learn",
+    "description": "Platform belajar dengan desain futuristik terang dan dashboard tech modern.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "light",
+    "agency": "Eksperimen",
+    "year": "2025"
+  },
+  {
+    "id": "aspirasi-frontend",
+    "title": "Aspirasi Frontend",
+    "description": "Frontend aplikasi penampung aspirasi siswa dengan alur form bertahap dan dashboard.",
+    "tags": ["React", "TypeScript", "Vite"],
+    "github": "https://github.com/abdulganihadiansyah",
+    "demo": "",
+    "image": "",
+    "color": "dark",
+    "agency": "Proyek Sekolah",
+    "year": "2025"
+  }
+]
