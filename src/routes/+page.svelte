@@ -21,6 +21,19 @@
     { value: "4", label: "Kategori: pribadi, sekolah, Dicoding, eksperimen" },
     { value: "2", label: "Tahun aktif belajar & membangun" }
   ];
+
+  const techChips = [
+    { label: "BUN", top: "10%", left: "12%", delay: 0, duration: 6 },
+    { label: "ELYSIAJS", top: "4%", left: "56%", delay: 0.6, duration: 7 },
+    { label: "TYPESCRIPT", top: "16%", left: "82%", delay: 1.2, duration: 6.5 },
+    { label: "EXPO", top: "38%", left: "90%", delay: 0.3, duration: 7.5 },
+    { label: "SQLITE", top: "60%", left: "86%", delay: 1.5, duration: 6 },
+    { label: "NESTJS", top: "76%", left: "66%", delay: 0.9, duration: 7 },
+    { label: "HAPI", top: "72%", left: "16%", delay: 0.4, duration: 6.5 },
+    { label: "THREE.JS", top: "48%", left: "3%", delay: 1.8, duration: 7 },
+    { label: "REACT", top: "22%", left: "5%", delay: 0.7, duration: 6.8 },
+    { label: "VITE", top: "86%", left: "40%", delay: 1.1, duration: 7.2 }
+  ];
 </script>
 
 <svelte:head>
@@ -49,64 +62,38 @@
       </div>
     </div>
 
-    <!-- Visual: kartu status API (flat, ala ilustrasi IBM) -->
-    <div class="relative hidden sm:block" aria-hidden="true">
-      <div class="relative border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-5 shadow-lg shadow-zinc-200/50 dark:shadow-black/40">
-        <div class="flex items-center gap-1.5 mb-5">
-          <span class="w-2.5 h-2.5 rounded-full bg-zinc-200 dark:bg-zinc-700"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-zinc-600"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-zinc-400 dark:bg-zinc-500"></span>
-          <span class="ml-auto font-mono text-[11px] text-zinc-500 dark:text-zinc-400">abdulgani.dev · api</span>
-        </div>
+    <!-- Visual: foto + tech stack mengambang -->
+    <div class="relative hidden sm:block h-[26rem] lg:h-[28rem]" aria-hidden="true">
+      <!-- Ring muter -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="ring-spin w-[23rem] h-[23rem] lg:w-[25rem] lg:h-[25rem] rounded-full border-2 border-dashed border-zinc-300 dark:border-zinc-700"></div>
+      </div>
 
-        <div class="space-y-2.5 font-mono text-[13px] mb-5">
-          <div class="flex items-center gap-2">
-            <span class="text-zinc-400 dark:text-zinc-500">GET</span>
-            <span class="text-zinc-950 dark:text-zinc-100">/api/projects</span>
-            <span class="ml-auto text-emerald-600 dark:text-emerald-400">200 OK</span>
+      <!-- Core: foto -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative chip-float" style="animation-duration: 7s">
+          <div class="w-40 h-40 lg:w-44 lg:h-44 rounded-2xl border-4 border-white dark:border-zinc-900 shadow-xl overflow-hidden">
+            <img src="/profile.webp" alt="" class="w-full h-full object-cover" />
           </div>
-          <div class="flex items-center gap-2">
-            <span class="text-zinc-400 dark:text-zinc-500">POST</span>
-            <span class="text-zinc-950 dark:text-zinc-100">/api/contact</span>
-            <span class="ml-auto text-emerald-600 dark:text-emerald-400">202 ACCEPTED</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-zinc-400 dark:text-zinc-500">GET</span>
-            <span class="text-zinc-950 dark:text-zinc-100">/api/notes</span>
-            <span class="ml-auto text-emerald-600 dark:text-emerald-400">200 OK</span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-2.5">
-          <div class="border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950/50 p-2.5">
-            <div class="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mb-1">RUNTIME</div>
-            <div class="font-mono text-[11px] text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>BUN
-            </div>
-          </div>
-          <div class="border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950/50 p-2.5">
-            <div class="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mb-1">FRAMEWORK</div>
-            <div class="font-mono text-[11px] text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>ELYSIAJS
-            </div>
-          </div>
-          <div class="border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950/50 p-2.5">
-            <div class="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mb-1">DATABASE</div>
-            <div class="font-mono text-[11px] text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>SQLITE
-            </div>
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-950 dark:bg-black text-white font-mono text-[10px] tracking-wider px-3 py-1">
+            BACKEND DEVELOPER
           </div>
         </div>
       </div>
 
-      <!-- Chip floating -->
-      <div class="absolute -top-4 -right-2 sm:-right-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 shadow-md">
-        <div class="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mb-0.5">STATUS</div>
-        <div class="font-mono text-xs font-medium text-blue-500 flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          ALL SYSTEMS OPERATIONAL
+      <!-- Chip tech stack mengambang -->
+      {#each techChips as chip}
+        <div
+          class="absolute chip-float"
+          style="top: {chip.top}; left: {chip.left}; animation-delay: {chip.delay}s; animation-duration: {chip.duration}s"
+        >
+          <span
+            class="inline-block font-mono text-[11px] px-3 py-1.5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 shadow-sm cursor-default transition-all duration-150 hover:border-blue-500 hover:text-blue-500 hover:shadow-md"
+          >
+            {chip.label}
+          </span>
         </div>
-      </div>
+      {/each}
     </div>
   </div>
 </section>
@@ -189,3 +176,31 @@
     </a>
   </div>
 </section>
+
+<style>
+  @keyframes floaty {
+    0%, 100% {
+      transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(1.5deg);
+    }
+  }
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .chip-float {
+    animation: floaty 6s ease-in-out infinite;
+  }
+  .ring-spin {
+    animation: spin-slow 45s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .chip-float,
+    .ring-spin {
+      animation: none;
+    }
+  }
+</style>
