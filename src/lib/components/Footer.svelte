@@ -47,9 +47,8 @@
       </nav>
     </div>
 
-    <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-zinc-500">
+    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-center sm:justify-between text-[11px] text-zinc-500">
       <span>© 2026 Abdul Gani Hadiansyah</span>
-      <span class="font-mono">IBM CARBON · SVELTEKIT · BUN</span>
     </div>
   </div>
 </footer>

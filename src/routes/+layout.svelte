@@ -2,6 +2,8 @@
   import "./layout.css";
   import favicon from "$lib/assets/favicon.svg";
   import { page } from "$app/state";
+  import { onNavigate } from "$app/navigation";
+  import { browser } from "$app/environment";
 
   import Navbar from "$lib/components/Navbar.svelte";
   import Footer from "$lib/components/Footer.svelte";
@@ -11,6 +13,17 @@
   const isAdmin = $derived(page.url.pathname.startsWith("/admin"));
   const isError = $derived(page.status >= 400);
   const hideLayout = $derived(isAdmin || isError);
+
+  /* Transisi halaman via View Transitions API (cross-fade halus antar route) */
+  onNavigate((navigation) => {
+    if (!browser || !document.startViewTransition) return;
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
 <svelte:head>

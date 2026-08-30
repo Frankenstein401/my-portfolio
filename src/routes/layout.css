@@ -100,6 +100,56 @@ a {
   @apply inline-flex items-center gap-1.5 text-blue-500 hover:text-blue-600 text-sm;
 }
 
+/* ============ Animasi ============ */
+
+/* Transisi antar halaman (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.28s;
+  animation-timing-function: ease-out;
+}
+
+/* Entrance fade-up (hero) */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  opacity: 0;
+  animation: fade-up 0.55s ease forwards;
+}
+
+/* Reveal saat scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+  .fade-up,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}
+
 /* Scrollbar (WebKit & Firefox) */
 ::-webkit-scrollbar {
   width: 6px;

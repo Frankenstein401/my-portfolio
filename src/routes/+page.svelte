@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import { ArrowRight, ArrowUpRight, FolderGit2 } from "lucide-svelte";
 
   interface Project {
@@ -23,17 +24,39 @@
   ];
 
   const techChips = [
-    { label: "BUN", top: "10%", left: "12%", delay: 0, duration: 6 },
-    { label: "ELYSIAJS", top: "4%", left: "56%", delay: 0.6, duration: 7 },
-    { label: "TYPESCRIPT", top: "16%", left: "82%", delay: 1.2, duration: 6.5 },
-    { label: "EXPO", top: "38%", left: "90%", delay: 0.3, duration: 7.5 },
-    { label: "SQLITE", top: "60%", left: "86%", delay: 1.5, duration: 6 },
-    { label: "NESTJS", top: "76%", left: "66%", delay: 0.9, duration: 7 },
-    { label: "HAPI", top: "72%", left: "16%", delay: 0.4, duration: 6.5 },
-    { label: "THREE.JS", top: "48%", left: "3%", delay: 1.8, duration: 7 },
-    { label: "REACT", top: "22%", left: "5%", delay: 0.7, duration: 6.8 },
-    { label: "VITE", top: "86%", left: "40%", delay: 1.1, duration: 7.2 }
+    { label: "Laravel", icon: "/icons/laravel.svg", top: "6%", left: "58%", delay: 0, duration: 6, invert: false },
+    { label: "NestJS", icon: "/icons/nestjs.svg", top: "24%", left: "90%", delay: 0.7, duration: 6.5, invert: false },
+    { label: "Elysia", icon: "/icons/elysiajs.svg", top: "54%", left: "93%", delay: 1.3, duration: 7, invert: false },
+    { label: "Drizzle", icon: "/icons/drizzle.svg", top: "76%", left: "60%", delay: 0.4, duration: 6.8, invert: false },
+    { label: "Flask", icon: "/icons/flask.svg", top: "56%", left: "2%", delay: 1.6, duration: 6.2, invert: true },
+    { label: "Prisma", icon: "/icons/prisma.svg", top: "26%", left: "4%", delay: 0.9, duration: 7.2, invert: true }
   ];
+
+  /* Reveal halus saat scroll */
+  let revealNodes: HTMLElement[] = [];
+  function reveal(node: HTMLElement) {
+    revealNodes.push(node);
+  }
+
+  onMount(() => {
+    if (!("IntersectionObserver" in window)) {
+      revealNodes.forEach((n) => n.classList.add("in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -30px 0px" }
+    );
+    revealNodes.forEach((n) => io.observe(n));
+    return () => io.disconnect();
+  });
 </script>
 
 <svelte:head>
@@ -44,16 +67,16 @@
 <section class="border-b border-zinc-200 dark:border-zinc-800">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     <div>
-      <p class="eyebrow mb-4">Abdul Gani Hadiansyah — Backend Developer</p>
-      <h1 class="text-4xl sm:text-5xl font-light leading-[1.15] tracking-tight text-zinc-950 dark:text-zinc-100 mb-6">
+      <p class="eyebrow mb-4 fade-up">Abdul Gani Hadiansyah — Backend Developer</p>
+      <h1 class="fade-up text-4xl sm:text-5xl font-light leading-[1.15] tracking-tight text-zinc-950 dark:text-zinc-100 mb-6" style="animation-delay: 0.08s">
         Membangun backend yang andal, dari API hingga otomasi.
       </h1>
-      <p class="text-lg font-light leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-lg mb-8">
+      <p class="fade-up text-lg font-light leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-lg mb-8" style="animation-delay: 0.16s">
         Siswa RPL SMKN 12 Jakarta yang fokus di pengembangan backend —
         merancang REST API, aplikasi full-stack, dan eksperimen teknologi
         yang dicatat dan dievaluasi dengan jujur.
       </p>
-      <div class="flex flex-wrap gap-4">
+      <div class="fade-up flex flex-wrap gap-4" style="animation-delay: 0.24s">
         <a href="/projects" class="btn btn-primary btn-arrow">
           Lihat proyek
           <ArrowRight class="w-4 h-4" />
@@ -63,7 +86,7 @@
     </div>
 
     <!-- Visual: foto + tech stack mengambang -->
-    <div class="relative hidden sm:block h-[26rem] lg:h-[28rem]" aria-hidden="true">
+    <div class="fade-up relative hidden sm:block h-[26rem] lg:h-[28rem]" style="animation-delay: 0.15s" aria-hidden="true">
       <!-- Ring muter -->
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="ring-spin w-[23rem] h-[23rem] lg:w-[25rem] lg:h-[25rem] rounded-full border-2 border-dashed border-zinc-300 dark:border-zinc-700"></div>
@@ -81,16 +104,22 @@
         </div>
       </div>
 
-      <!-- Chip tech stack mengambang -->
+      <!-- Chip tech stack mengambang (icon brand asli) -->
       {#each techChips as chip}
         <div
           class="absolute chip-float"
           style="top: {chip.top}; left: {chip.left}; animation-delay: {chip.delay}s; animation-duration: {chip.duration}s"
         >
           <span
-            class="inline-block font-mono text-[11px] px-3 py-1.5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 shadow-sm cursor-default transition-all duration-150 hover:border-blue-500 hover:text-blue-500 hover:shadow-md"
+            title={chip.label}
+            class="flex items-center justify-center w-12 h-12 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-sm cursor-default transition-all duration-150 hover:border-blue-500 hover:shadow-md hover:scale-110"
           >
-            {chip.label}
+            <img
+              src={chip.icon}
+              alt={chip.label}
+              loading="lazy"
+              class="w-6 h-6 {chip.invert ? "invert dark:invert-0" : ""}"
+            />
           </span>
         </div>
       {/each}
@@ -102,7 +131,7 @@
 <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
     {#each stats as stat}
-      <div class="border-t-2 border-zinc-400 dark:border-zinc-600 pt-4">
+      <div class="reveal border-t-2 border-zinc-400 dark:border-zinc-600 pt-4" use:reveal>
         <div class="text-4xl font-light text-zinc-950 dark:text-zinc-100 mb-2">{stat.value}</div>
         <div class="text-sm text-zinc-600 dark:text-zinc-400 leading-snug">{stat.label}</div>
       </div>
@@ -125,7 +154,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
     {#each featured as item}
-      <article class="ibm-card p-6 flex flex-col">
+      <article class="reveal ibm-card p-6 flex flex-col" use:reveal>
         <div class="flex items-center gap-2 mb-3">
           <FolderGit2 class="w-4 h-4 text-blue-500" />
           <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
@@ -159,7 +188,7 @@
 
 <!-- ============ CTA BANNER ============ -->
 <section class="bg-purple-10 dark:bg-purple-70/20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+  <div class="reveal max-w-6xl mx-auto px-4 sm:px-6 py-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8" use:reveal>
     <div>
       <p class="eyebrow mb-2 !text-purple-70 dark:!text-purple-10">Kolaborasi</p>
       <h2 class="text-3xl font-light text-zinc-950 dark:text-zinc-100 mb-2">
