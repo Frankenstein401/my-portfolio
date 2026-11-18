@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>404 — Halaman Tidak Ditemukan</title>
+  <title>404 — Page Not Found</title>
 </svelte:head>
 
 <section class="min-h-[75vh] flex flex-col items-center justify-center text-center px-4 py-12 relative z-10">
@@ -25,21 +25,21 @@
 
   <!-- Main Information -->
   <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mt-6 mb-3">
-    Waduh, Halaman Tidak Ditemukan!
+    Oops, Page Not Found!
   </h2>
 
   <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-md mx-auto leading-relaxed mb-8">
-    Halaman <code class="font-mono text-xs px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700">{page.url.pathname}</code> yang kamu cari tidak ada, telah dihapus, atau jalurnya salah.
+    The page <code class="font-mono text-xs px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700">{page.url.pathname}</code> you are looking for does not exist, has been removed, or the link is incorrect.
   </p>
 
   <!-- Navigation Action Buttons -->
   <div class="flex flex-wrap items-center justify-center gap-3">
     <a
-      href="/about"
+      href="/"
       class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
     >
       <Home class="w-4 h-4" />
-      <span>Kembali ke Beranda</span>
+      <span>Back to Home</span>
     </a>
 
     <button
@@ -48,7 +48,7 @@
       class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all"
     >
       <ArrowLeft class="w-4 h-4" />
-      <span>Halaman Sebelumnya</span>
+      <span>Previous Page</span>
     </button>
   </div>
 </section>

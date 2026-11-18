@@ -23,7 +23,7 @@
     Blog
   </h1>
   <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-    Tulisan, pemikiran, tutorial, dan dokumentasi perjalanan saya.
+    Articles, thoughts, tutorials, and documentation of my journey.
   </p>
 
   <!-- Daftar Artikel -->

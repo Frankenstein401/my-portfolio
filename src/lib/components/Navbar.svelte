@@ -4,11 +4,11 @@
   import { Menu, X } from "lucide-svelte";
 
   const navItems = [
-    { href: "/about", label: "Tentang", exact: true },
-    { href: "/achievement", label: "Prestasi", exact: true },
-    { href: "/projects", label: "Proyek", exact: false },
+    { href: "/about", label: "About", exact: true },
+    { href: "/achievement", label: "Achievements", exact: true },
+    { href: "/projects", label: "Projects", exact: false },
     { href: "/blog", label: "Blog", exact: false },
-    { href: "/my-notes", label: "Catatan", exact: false }
+    { href: "/my-notes", label: "Notes", exact: false }
   ];
 
   let isOpen = $state(false);
@@ -34,7 +34,7 @@
       href="/"
       onclick={closeMenu}
       class="flex items-center gap-2.5 text-zinc-950 dark:text-zinc-100 shrink-0"
-      aria-label="Beranda — Abdul Gani Hadiansyah"
+      aria-label="Home — Abdul Gani Hadiansyah"
     >
       <svg class="shrink-0 text-zinc-950 dark:text-white" viewBox="0 0 40 20" width="30" height="15" aria-hidden="true">
         <rect x="0" y="0" width="11" height="1.6" fill="currentColor" />
@@ -50,7 +50,7 @@
     </a>
 
     <!-- Nav desktop -->
-    <nav class="hidden md:flex items-center gap-0.5 ml-auto" aria-label="Navigasi utama">
+    <nav class="hidden md:flex items-center gap-0.5 ml-auto" aria-label="Main navigation">
       {#each navItems as item}
         <a
           href={item.href}
@@ -66,12 +66,12 @@
     <div class="flex items-center gap-1 ml-auto md:ml-2">
       <ThemeToggle />
       <a href="/contact" class="btn btn-secondary hidden sm:inline-flex !min-h-8 !px-3 text-xs">
-        Kontak
+        Contact
       </a>
       <button
         type="button"
         onclick={() => (isOpen = !isOpen)}
-        aria-label="Toggle Menu Navigasi"
+        aria-label="Toggle navigation menu"
         aria-expanded={isOpen}
         class="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
       >
@@ -87,7 +87,7 @@
   <!-- Drawer mobile -->
   {#if isOpen}
     <div class="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-xl">
-      <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4" aria-label="Navigasi mobile">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4" aria-label="Mobile navigation">
         <ul class="flex flex-col">
           {#each navItems as item}
             <li>
@@ -108,7 +108,7 @@
               onclick={closeMenu}
               class="block py-3 text-sm text-zinc-700 dark:text-zinc-300 hover:text-blue-500 transition-colors"
             >
-              Kontak
+              Contact
             </a>
           </li>
         </ul>

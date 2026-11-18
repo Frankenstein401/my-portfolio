@@ -18,17 +18,17 @@
 </script>
 
 <svelte:head>
-  <title>Proyek — Abdul Gani Hadiansyah</title>
+  <title>Projects — Abdul Gani Hadiansyah</title>
 </svelte:head>
 
 <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-  <p class="eyebrow mb-3">Proyek</p>
+  <p class="eyebrow mb-3">Projects</p>
   <h1 class="text-3xl sm:text-4xl font-light text-zinc-950 dark:text-zinc-100 mb-3">
-    Proyek &amp; eksperimen
+    Projects &amp; experiments
   </h1>
   <p class="text-zinc-600 dark:text-zinc-400 max-w-xl mb-10">
-    Daftar proyek, karya open-source, dan eksperimen yang pernah saya buat —
-    dari aplikasi produksi hingga eksplorasi teknologi baru.
+    A list of projects, open-source work, and experiments I have built —
+    from production applications to new tech explorations.
   </p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -49,7 +49,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="hover:text-blue-500 transition-colors p-0.5"
-                aria-label="Repositori GitHub"
+                aria-label="GitHub Repository"
               >
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path
@@ -64,7 +64,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="hover:text-blue-500 transition-colors p-0.5"
-                aria-label="Tautan Demo"
+                aria-label="Demo Link"
               >
                 <ArrowUpRight class="w-4 h-4" />
               </a>

@@ -3,16 +3,15 @@
 </script>
 
 <svelte:head>
-  <title>Kontak — Abdul Gani Hadiansyah</title>
+  <title>Contact — Abdul Gani Hadiansyah</title>
 </svelte:head>
 
 <section class="max-w-3xl mx-auto py-8 px-4 sm:px-6 relative z-10">
-  <!-- Judul & Subjudul Rata Kiri Sama Seperti Rute Lain -->
   <h1 class="text-2xl font-bold mb-2 text-zinc-900 dark:text-zinc-100">
-    Kontak
+    Contact
   </h1>
   <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-    Mari terhubung melalui surel atau media sosial di bawah ini.
+    Let's connect via email or social media below.
   </p>
 
   <!-- Daftar Tautan Kontak Terpusat Tanpa Kontainer Box -->

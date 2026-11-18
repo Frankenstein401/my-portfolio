@@ -1,19 +1,19 @@
 [
   {
     "id": "lksn-2026",
-    "title": "Juara LKSN Tingkat Daerah JU1 Web Technologies",
+    "title": "1st Place Winner - Regional Student Skills Competition (LKSN) in Web Technologies",
     "year": "2026",
     "location": "Jakarta, Indonesia",
-    "desc": "Kompetisi keterampilan siswa tingkat daerah bidang pengembangan web.",
+    "desc": "Regional vocational student skills competition in web technologies.",
     "image": "/logo-lksn-dikmen.webp",
     "link": "#"
   },
   {
     "id": "robothon-2025",
-    "title": "Juara Robothon By Pythaverse Tingkat ASEAN",
+    "title": "Champion - ASEAN Robothon by Pythaverse",
     "year": "2025",
     "location": "ASEAN Regional",
-    "desc": "Kompetisi tingkat internasional ASEAN dalam memecahkan masalah melalui Robotik dan IoT.",
+    "desc": "ASEAN international competition solving real-world challenges through Robotics and IoT.",
     "image": "https://assets.zyrosite.com/Aq2qp41abgH1e3pj/copy-of-short_fullcolor_logo-AGB4nDxQeDSVGj0w.png",
     "link": "#"
   }

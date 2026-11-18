@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>Panel Admin — Abdul Gani Hadiansyah</title>
+  <title>Admin Panel — Abdul Gani Hadiansyah</title>
 </svelte:head>
 
 <section class="max-w-3xl mx-auto py-8 px-4 sm:px-6 relative z-10">
@@ -17,19 +17,19 @@
     href="/about"
     class="text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-1.5 mb-6"
   >
-    ← Kembali ke Portfolio
+    ← Back to Portfolio
   </a>
 
   <div class="mb-2">
     <h1 class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-      Panel Admin
+      Admin Panel
     </h1>
   </div>
   <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-    Kelola & tambah konten baru untuk website personal kamu.
+    Manage &amp; add new content for your personal website.
   </p>
 
-  <!-- Notifikasi Pesan Sukses / Error -->
+  <!-- Notification Success / Error -->
   {#if form?.success}
     <div class="mb-6 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 flex items-center gap-3 text-sm">
       <CheckCircle2 class="w-5 h-5 text-emerald-500 shrink-0" />
@@ -42,7 +42,7 @@
     </div>
   {/if}
 
-  <!-- Tab Navigasi Form -->
+  <!-- Tab Form Navigation -->
   <div class="flex flex-wrap border-b border-zinc-200 dark:border-zinc-800 mb-6 gap-1 sm:gap-2">
     <button
       type="button"
@@ -52,7 +52,7 @@
         : "px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-1.5"}
     >
       <BookOpen class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-      <span>Artikel ({data.posts.length})</span>
+      <span>Articles ({data.posts.length})</span>
     </button>
 
     <button
@@ -63,7 +63,7 @@
         : "px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-1.5"}
     >
       <FolderGit2 class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-      <span>Proyek ({data.projects.length})</span>
+      <span>Projects ({data.projects.length})</span>
     </button>
 
     <button
@@ -74,39 +74,39 @@
         : "px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-1.5"}
     >
       <FileText class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-      <span>Catatan TIL ({data.notes.length})</span>
+      <span>TIL Notes ({data.notes.length})</span>
     </button>
   </div>
 
-  <!-- TAB 1: Artikel Blog -->
+  <!-- TAB 1: Blog Articles -->
   {#if activeTab === "post"}
     <div class="space-y-8">
-      <!-- Form Tambah Blog -->
+      <!-- Add Blog Form -->
       <form method="POST" action="?/addPost" use:enhance class="space-y-4">
-        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Tambah Artikel Blog</h2>
+        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Add Blog Article</h2>
         <div>
           <label for="post-title" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Judul Artikel *
+            Article Title *
           </label>
           <input
             id="post-title"
             type="text"
             name="title"
             required
-            placeholder="contoh: Belajar Svelte 5 Runes untuk Pemula"
+            placeholder="e.g.: Getting Started with Svelte 5 Runes"
             class="w-full px-3 py-2 text-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
           <label for="post-desc" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Deskripsi Ringkas
+            Short Description
           </label>
           <input
             id="post-desc"
             type="text"
             name="description"
-            placeholder="Ringkasan singkat artikel..."
+            placeholder="Brief summary of the article..."
             class="w-full px-3 py-2 text-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -114,7 +114,7 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label for="post-date" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-              Tanggal Publikasi
+              Publication Date
             </label>
             <input
               id="post-date"
@@ -127,7 +127,7 @@
 
           <div>
             <label for="post-lang" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-              Bahasa
+              Language
             </label>
             <select
               id="post-lang"
@@ -142,14 +142,14 @@
 
         <div>
           <label for="post-content" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Isi Artikel (Format Markdown) *
+            Article Content (Markdown) *
           </label>
           <textarea
             id="post-content"
             name="content"
             rows="8"
             required
-            placeholder="Tulis artikel kamu dalam format Markdown di sini..."
+            placeholder="Write your article in Markdown here..."
             class="w-full px-3 py-2 text-sm font-mono rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
         </div>
@@ -159,13 +159,13 @@
           class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow transition-colors"
         >
           <PlusCircle class="w-4 h-4" />
-          <span>Simpan Artikel Blog</span>
+          <span>Save Blog Article</span>
         </button>
       </form>
 
-      <!-- Daftar Artikel Blog Terpasang -->
+      <!-- Existing Blog Articles List -->
       <div class="pt-6 border-t border-zinc-200 dark:border-zinc-800 space-y-4">
-        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Daftar Artikel ({data.posts.length})</h2>
+        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Articles List ({data.posts.length})</h2>
         <div class="divide-y divide-zinc-200/60 dark:divide-zinc-800/60">
           {#each data.posts as post}
             <div class="py-3 flex items-center justify-between gap-4">
@@ -182,9 +182,9 @@
                 <button
                   type="submit"
                   class="p-1.5 text-zinc-400 hover:text-red-500 transition-colors"
-                  title="Hapus Artikel"
+                  title="Delete Article"
                   onclick={(e) => {
-                    if (!confirm(`Hapus artikel "${post.title}"?`)) e.preventDefault();
+                    if (!confirm(`Delete article "${post.title}"?`)) e.preventDefault();
                   }}
                 >
                   <Trash2 class="w-4 h-4" />
@@ -197,43 +197,43 @@
     </div>
   {/if}
 
-  <!-- TAB 2: Proyek -->
+  <!-- TAB 2: Projects -->
   {#if activeTab === "project"}
     <div class="space-y-8">
-      <!-- Form Tambah Proyek -->
+      <!-- Add Project Form -->
       <form method="POST" action="?/addProject" enctype="multipart/form-data" use:enhance class="space-y-4">
-        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Tambah Proyek Baru</h2>
+        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Add New Project</h2>
         <div>
           <label for="proj-title" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Judul Proyek *
+            Project Title *
           </label>
           <input
             id="proj-title"
             type="text"
             name="title"
             required
-            placeholder="contoh: Kasir POS App"
+            placeholder="e.g.: POS Cashier App"
             class="w-full px-3 py-2 text-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
           <label for="proj-desc" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Deskripsi Proyek *
+            Project Description *
           </label>
           <textarea
             id="proj-desc"
             name="description"
             rows="3"
             required
-            placeholder="Penjelasan singkat proyek..."
+            placeholder="Brief overview of the project..."
             class="w-full px-3 py-2 text-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
         </div>
 
         <div>
           <label for="proj-tags" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Tags Teknologi (pisahkan dengan koma)
+            Tech Stack Tags (comma separated)
           </label>
           <input
             id="proj-tags"
@@ -266,7 +266,7 @@
               id="proj-demo"
               type="url"
               name="demo"
-              placeholder="https://demo-aplikasi.com"
+              placeholder="https://app-demo.com"
               class="w-full px-3 py-2 text-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -274,7 +274,7 @@
 
         <div>
           <label for="proj-image-file" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Upload Foto Preview Proyek (PNG / JPG / WebP)
+            Upload Project Preview Image (PNG / JPG / WebP)
           </label>
           <input
             id="proj-image-file"
@@ -287,7 +287,7 @@
 
         <div>
           <label for="proj-image" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Atau Gunakan Path/URL Gambar Manual (Opsional)
+            Or Use Manual Image Path/URL (Optional)
           </label>
           <input
             id="proj-image"
@@ -303,13 +303,13 @@
           class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow transition-colors"
         >
           <PlusCircle class="w-4 h-4" />
-          <span>Simpan Proyek</span>
+          <span>Save Project</span>
         </button>
       </form>
 
-      <!-- Daftar Proyek Terpasang -->
+      <!-- Existing Projects List -->
       <div class="pt-6 border-t border-zinc-200 dark:border-zinc-800 space-y-4">
-        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Daftar Proyek ({data.projects.length})</h2>
+        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Projects List ({data.projects.length})</h2>
         <div class="divide-y divide-zinc-200/60 dark:divide-zinc-800/60">
           {#each data.projects as proj}
             <div class="py-3 flex items-center justify-between gap-4">
@@ -326,9 +326,9 @@
                 <button
                   type="submit"
                   class="p-1.5 text-zinc-400 hover:text-red-500 transition-colors"
-                  title="Hapus Proyek"
+                  title="Delete Project"
                   onclick={(e) => {
-                    if (!confirm(`Hapus proyek "${proj.title}"?`)) e.preventDefault();
+                    if (!confirm(`Delete project "${proj.title}"?`)) e.preventDefault();
                   }}
                 >
                   <Trash2 class="w-4 h-4" />
@@ -341,22 +341,22 @@
     </div>
   {/if}
 
-  <!-- TAB 3: Catatan TIL -->
+  <!-- TAB 3: TIL Notes -->
   {#if activeTab === "note"}
     <div class="space-y-8">
-      <!-- Form Tambah Catatan TIL -->
+      <!-- Add TIL Note Form -->
       <form method="POST" action="?/addNote" use:enhance class="space-y-4">
-        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Tambah Catatan TIL</h2>
+        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Add TIL Note</h2>
         <div>
           <label for="note-title" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Judul Catatan TIL *
+            TIL Note Title *
           </label>
           <input
             id="note-title"
             type="text"
             name="title"
             required
-            placeholder="contoh: Svelte 5 Runes: Reaktivitas Baru"
+            placeholder="e.g.: Svelte 5 Runes: Modern Reactivity"
             class="w-full px-3 py-2 text-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -364,7 +364,7 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label for="note-date" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-              Tanggal
+              Date
             </label>
             <input
               id="note-date"
@@ -377,7 +377,7 @@
 
           <div>
             <label for="note-lang" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-              Bahasa
+              Language
             </label>
             <select
               id="note-lang"
@@ -392,7 +392,7 @@
 
         <div>
           <label for="note-tags" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1">
-            Tags Topic (pisahkan dengan koma)
+            Topic Tags (comma separated)
           </label>
           <input
             id="note-tags"
@@ -408,13 +408,13 @@
           class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow transition-colors"
         >
           <PlusCircle class="w-4 h-4" />
-          <span>Simpan Catatan TIL</span>
+          <span>Save TIL Note</span>
         </button>
       </form>
 
-      <!-- Daftar Catatan TIL Terpasang -->
+      <!-- Existing TIL Notes List -->
       <div class="pt-6 border-t border-zinc-200 dark:border-zinc-800 space-y-4">
-        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Daftar Catatan ({data.notes.length})</h2>
+        <h2 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Notes List ({data.notes.length})</h2>
         <div class="divide-y divide-zinc-200/60 dark:divide-zinc-800/60">
           {#each data.notes as note}
             <div class="py-3 flex items-center justify-between gap-4">
@@ -431,9 +431,9 @@
                 <button
                   type="submit"
                   class="p-1.5 text-zinc-400 hover:text-red-500 transition-colors"
-                  title="Hapus Catatan"
+                  title="Delete Note"
                   onclick={(e) => {
-                    if (!confirm(`Hapus catatan "${note.title}"?`)) e.preventDefault();
+                    if (!confirm(`Delete note "${note.title}"?`)) e.preventDefault();
                   }}
                 >
                   <Trash2 class="w-4 h-4" />

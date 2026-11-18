@@ -4,13 +4,13 @@
 </script>
 
 <svelte:head>
-  <title>Prestasi — Abdul Gani Hadiansyah</title>
+  <title>Achievements — Abdul Gani Hadiansyah</title>
 </svelte:head>
 
 <section class="max-w-3xl mx-auto py-8 px-4 sm:px-6 relative z-10">
-  <h1 class="text-2xl font-bold mb-2 text-zinc-900 dark:text-zinc-100">Prestasi</h1>
+  <h1 class="text-2xl font-bold mb-2 text-zinc-900 dark:text-zinc-100">Achievements</h1>
   <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-    Daftar pencapaian, kejuaraan, dan penghargaan yang pernah saya raih.
+    A list of achievements, competitions, and awards I have earned.
   </p>
 
   <!-- Container Utama Timeline -->
@@ -47,7 +47,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-zinc-400 hover:text-blue-500 transition-colors"
-              aria-label="Tautan Eksternal"
+              aria-label="External Link"
             >
               <ExternalLink class="w-3.5 h-3.5" />
             </a>

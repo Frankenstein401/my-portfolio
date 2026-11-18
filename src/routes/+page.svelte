@@ -17,10 +17,10 @@
   const featured = projects.slice(0, 3);
 
   const stats = [
-    { value: "8+", label: "Proyek & eksperimen tercatat" },
-    { value: "17+", label: "Teknologi pernah dipakai" },
-    { value: "4", label: "Kategori: pribadi, sekolah, Dicoding, eksperimen" },
-    { value: "2", label: "Tahun aktif belajar & membangun" }
+    { value: "8+", label: "Projects & experiments recorded" },
+    { value: "17+", label: "Technologies used" },
+    { value: "4", label: "Categories: personal, school, Dicoding, experiments" },
+    { value: "2", label: "Years active learning & building" }
   ];
 
   const techChips = [
@@ -69,19 +69,18 @@
     <div>
       <p class="eyebrow mb-4 fade-up">Abdul Gani Hadiansyah — Backend Developer</p>
       <h1 class="fade-up text-4xl sm:text-5xl font-light leading-[1.15] tracking-tight text-zinc-950 dark:text-zinc-100 mb-6" style="animation-delay: 0.08s">
-        Membangun backend yang andal, dari API hingga otomasi.
+        Building reliable backends, from APIs to automation.
       </h1>
       <p class="fade-up text-lg font-light leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-lg mb-8" style="animation-delay: 0.16s">
-        Siswa RPL SMKN 12 Jakarta yang fokus di pengembangan backend —
-        merancang REST API, aplikasi full-stack, dan eksperimen teknologi
-        yang dicatat dan dievaluasi dengan jujur.
+        Software Engineering student at SMKN 12 Jakarta focused on backend development —
+        designing REST APIs, full-stack applications, and honest technical experiments.
       </p>
       <div class="fade-up flex flex-wrap gap-4" style="animation-delay: 0.24s">
         <a href="/projects" class="btn btn-primary btn-arrow">
-          Lihat proyek
+          View projects
           <ArrowRight class="w-4 h-4" />
         </a>
-        <a href="/contact" class="btn btn-tertiary">Hubungi saya</a>
+        <a href="/contact" class="btn btn-tertiary">Contact me</a>
       </div>
     </div>
 
@@ -139,15 +138,15 @@
   </div>
 </section>
 
-<!-- ============ PROYEK PILIHAN ============ -->
+<!-- ============ FEATURED PROJECTS ============ -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
   <div class="flex items-end justify-between mb-8">
     <div>
-      <p class="eyebrow mb-2">Proyek</p>
-      <h2 class="text-3xl font-light text-zinc-950 dark:text-zinc-100">Yang sedang saya kerjakan</h2>
+      <p class="eyebrow mb-2">Projects</p>
+      <h2 class="text-3xl font-light text-zinc-950 dark:text-zinc-100">Featured work &amp; projects</h2>
     </div>
     <a href="/projects" class="ibm-link shrink-0 mb-1">
-      Lihat semua
+      View all
       <ArrowRight class="w-4 h-4" />
     </a>
   </div>
@@ -158,7 +157,7 @@
         <div class="flex items-center gap-2 mb-3">
           <FolderGit2 class="w-4 h-4 text-blue-500" />
           <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            {item.tags?.[0] ?? "Proyek"}
+            {item.tags?.[0] ?? "Project"}
           </span>
         </div>
         <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-100 mb-2">{item.title}</h3>
@@ -178,7 +177,7 @@
           rel={item.github ? "noopener noreferrer" : undefined}
           class="ibm-link mt-auto pt-2"
         >
-          Detail
+          Details
           <ArrowUpRight class="w-4 h-4" />
         </a>
       </article>
@@ -190,17 +189,16 @@
 <section class="bg-purple-10 dark:bg-purple-70/20">
   <div class="reveal max-w-6xl mx-auto px-4 sm:px-6 py-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8" use:reveal>
     <div>
-      <p class="eyebrow mb-2 !text-purple-70 dark:!text-purple-10">Kolaborasi</p>
+      <p class="eyebrow mb-2 !text-purple-70 dark:!text-purple-10">Collaboration</p>
       <h2 class="text-3xl font-light text-zinc-950 dark:text-zinc-100 mb-2">
-        Punya proyek atau butuh backend dibangun?
+        Have a project or need a backend built?
       </h2>
       <p class="text-zinc-600 dark:text-zinc-300 max-w-xl">
-        Diskusi, kolaborasi, atau sekadar bertanya seputar pengembangan web
-        dan backend — saya terbuka.
+        Open for discussions, collaborations, or questions about web and backend development.
       </p>
     </div>
     <a href="/contact" class="btn btn-primary shrink-0">
-      Mulai diskusi
+      Get in touch
       <ArrowRight class="w-4 h-4" />
     </a>
   </div>

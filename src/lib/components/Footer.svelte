@@ -1,11 +1,11 @@
 <script lang="ts">
   const links = [
-    { href: "/about", label: "Tentang" },
-    { href: "/achievement", label: "Prestasi" },
-    { href: "/projects", label: "Proyek" },
+    { href: "/about", label: "About" },
+    { href: "/achievement", label: "Achievements" },
+    { href: "/projects", label: "Projects" },
     { href: "/blog", label: "Blog" },
-    { href: "/my-notes", label: "Catatan" },
-    { href: "/contact", label: "Kontak" },
+    { href: "/my-notes", label: "Notes" },
+    { href: "/contact", label: "Contact" },
     { href: "https://github.com/abdulganihadiansyah", label: "GitHub", external: true }
   ];
 </script>
@@ -13,7 +13,7 @@
 <footer class="mt-auto bg-zinc-950 dark:bg-black text-zinc-100">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-7">
     <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
-      <a href="/" class="flex items-center gap-2.5 text-sm font-semibold shrink-0" aria-label="Beranda">
+      <a href="/" class="flex items-center gap-2.5 text-sm font-semibold shrink-0" aria-label="Home">
         <svg class="text-white shrink-0" viewBox="0 0 40 20" width="26" height="13" aria-hidden="true">
           <rect x="0" y="0" width="11" height="1.6" fill="currentColor" />
           <rect x="0" y="2.7" width="16" height="1.6" fill="currentColor" />

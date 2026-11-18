@@ -91,7 +91,7 @@ export const actions: Actions = {
     const imageFile = formData.get("imageFile") as File | null;
 
     if (!title || !description) {
-      return fail(400, { error: "Judul dan deskripsi proyek wajib diisi." });
+      return fail(400, { error: "Project title and description are required." });
     }
 
     if (imageFile && imageFile.size > 0) {
@@ -120,9 +120,9 @@ export const actions: Actions = {
       const existing = JSON.parse(fs.readFileSync(filePath, "utf-8"));
       existing.unshift(newProject);
       fs.writeFileSync(filePath, JSON.stringify(existing, null, 2), "utf-8");
-      return { success: true, message: `Proyek "${title}" berhasil ditambahkan!` };
+      return { success: true, message: `Project "${title}" added successfully!` };
     } catch (e: any) {
-      return fail(500, { error: `Gagal menyimpan proyek: ${e.message}` });
+      return fail(500, { error: `Failed to save project: ${e.message}` });
     }
   },
 
@@ -131,16 +131,16 @@ export const actions: Actions = {
     const formData = await request.formData();
     const id = formData.get("id")?.toString();
 
-    if (!id) return fail(400, { error: "ID proyek tidak valid." });
+    if (!id) return fail(400, { error: "Invalid project ID." });
 
     const filePath = path.resolve("src/lib/data/projects.json");
     try {
       const existing = JSON.parse(fs.readFileSync(filePath, "utf-8"));
       const filtered = existing.filter((p: any) => p.id !== id);
       fs.writeFileSync(filePath, JSON.stringify(filtered, null, 2), "utf-8");
-      return { success: true, message: "Proyek berhasil dihapus!" };
+      return { success: true, message: "Project deleted successfully!" };
     } catch (e: any) {
-      return fail(500, { error: `Gagal menghapus proyek: ${e.message}` });
+      return fail(500, { error: `Failed to delete project: ${e.message}` });
     }
   },
 
@@ -153,7 +153,7 @@ export const actions: Actions = {
     const tagsStr = formData.get("tags")?.toString().trim() || "";
 
     if (!title) {
-      return fail(400, { error: "Judul catatan wajib diisi." });
+      return fail(400, { error: "Note title is required." });
     }
 
     const id = title
@@ -173,9 +173,9 @@ export const actions: Actions = {
       const existing = JSON.parse(fs.readFileSync(filePath, "utf-8"));
       existing.unshift(newNote);
       fs.writeFileSync(filePath, JSON.stringify(existing, null, 2), "utf-8");
-      return { success: true, message: `Catatan TIL "${title}" berhasil ditambahkan!` };
+      return { success: true, message: `TIL note "${title}" added successfully!` };
     } catch (e: any) {
-      return fail(500, { error: `Gagal menyimpan catatan: ${e.message}` });
+      return fail(500, { error: `Failed to save note: ${e.message}` });
     }
   },
 
@@ -184,16 +184,16 @@ export const actions: Actions = {
     const formData = await request.formData();
     const id = formData.get("id")?.toString();
 
-    if (!id) return fail(400, { error: "ID catatan tidak valid." });
+    if (!id) return fail(400, { error: "Invalid note ID." });
 
     const filePath = path.resolve("src/lib/data/notes.json");
     try {
       const existing = JSON.parse(fs.readFileSync(filePath, "utf-8"));
       const filtered = existing.filter((n: any) => n.id !== id);
       fs.writeFileSync(filePath, JSON.stringify(filtered, null, 2), "utf-8");
-      return { success: true, message: "Catatan TIL berhasil dihapus!" };
+      return { success: true, message: "TIL note deleted successfully!" };
     } catch (e: any) {
-      return fail(500, { error: `Gagal menghapus catatan: ${e.message}` });
+      return fail(500, { error: `Failed to delete note: ${e.message}` });
     }
   },
 
@@ -207,7 +207,7 @@ export const actions: Actions = {
     const lang = formData.get("lang")?.toString().trim() || "ID";
 
     if (!title || !content) {
-      return fail(400, { error: "Judul dan isi artikel blog wajib diisi." });
+      return fail(400, { error: "Blog article title and content are required." });
     }
 
     const slug = title
@@ -229,9 +229,9 @@ ${content}
     const filePath = path.resolve(`src/lib/posts/${slug}.md`);
     try {
       fs.writeFileSync(filePath, markdownContent, "utf-8");
-      return { success: true, message: `Artikel blog "${title}" berhasil disimpan!` };
+      return { success: true, message: `Blog article "${title}" saved successfully!` };
     } catch (e: any) {
-      return fail(500, { error: `Gagal membuat artikel blog: ${e.message}` });
+      return fail(500, { error: `Failed to create blog article: ${e.message}` });
     }
   },
 
@@ -240,16 +240,16 @@ ${content}
     const formData = await request.formData();
     const slug = formData.get("slug")?.toString();
 
-    if (!slug) return fail(400, { error: "Slug artikel tidak valid." });
+    if (!slug) return fail(400, { error: "Invalid article slug." });
 
     const filePath = path.resolve(`src/lib/posts/${slug}.md`);
     try {
       if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
       }
-      return { success: true, message: "Artikel blog berhasil dihapus!" };
+      return { success: true, message: "Blog article deleted successfully!" };
     } catch (e: any) {
-      return fail(500, { error: `Gagal menghapus artikel blog: ${e.message}` });
+      return fail(500, { error: `Failed to delete blog article: ${e.message}` });
     }
   }
 };

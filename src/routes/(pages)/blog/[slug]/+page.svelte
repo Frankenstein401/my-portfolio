@@ -7,7 +7,7 @@
   function formatDate(dateStr: string) {
     if (!dateStr) return "";
     const date = new Date(dateStr);
-    return date.toLocaleDateString("id-ID", {
+    return date.toLocaleDateString("en-US", {
       month: "long",
       day: "numeric",
       year: "numeric"
@@ -20,18 +20,18 @@
 </svelte:head>
 
 <section class="max-w-2xl mx-auto py-8 px-4 sm:px-6 relative z-10">
-  <!-- Navigasi Kembali -->
+  <!-- Back Navigation -->
   <a
     href="/blog"
     class="text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-1.5 mb-6"
   >
-    ← Kembali ke Blog
+    ← Back to Blog
   </a>
 
-  <!-- Header Artikel -->
+  <!-- Article Header -->
   <header class="mb-8 pb-6 border-b border-zinc-200/60 dark:border-zinc-800/60">
     <time datetime={data.meta.date} class="text-xs font-mono text-zinc-400 dark:text-zinc-500 block mb-2">
-      Dipublikasikan pada {formatDate(data.meta.date)}
+      Published on {formatDate(data.meta.date)}
     </time>
     <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 leading-tight">
       {data.meta.title}

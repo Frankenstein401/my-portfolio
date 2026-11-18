@@ -22,15 +22,15 @@
 </script>
 
 <svelte:head>
-  <title>Catatan (TIL) — Abdul Gani Hadiansyah</title>
+  <title>Notes (TIL) — Abdul Gani Hadiansyah</title>
 </svelte:head>
 
 <section class="max-w-3xl mx-auto py-8 px-4 sm:px-6 relative z-10">
   <h1 class="text-2xl font-bold mb-2 text-zinc-900 dark:text-zinc-100">
-    Catatan Harian (TIL)
+    Daily Notes (TIL)
   </h1>
   <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-    Today I Learned — Catatan singkat tentang hal-hal baru yang saya pelajari setiap hari.
+    Today I Learned — Short notes on new things I learn every day.
   </p>
 
   <!-- Daftar Catatan ala Saugi's TIL (til.saugi.me) -->
